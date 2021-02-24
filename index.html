@@ -1,1 +1,241 @@
-Hello world
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Basic Vue Js - HelloWorld App</title>
+
+
+
+    <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+
+    <!-- Using via Google Web Fonts -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+
+
+    <!-- https://tailwindcss.com/docs/installation -->
+
+    <!-- Using Tailwind via CDN -->
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+
+
+    <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+
+    <!-- Vue CDN -->
+
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- <div id="app" class="h-screen w-full bg-gray-200 flex items-start justify-start">
+
+        <img src="./images/1.jpg" class="w-1/3 h-full">
+
+        <div class="w-full flex items-center justify-end">
+
+            <i class="material-icons">face</i>
+
+            <p class="font-semibold text-xl tracking-wider uppercase px-3">{{ msg}}</p>
+
+        </div>
+
+    </div> -->
+    <div id="app">
+        <div class="flex justify-center bg-white mt-6 mb-12">
+            <img class="h-12 ml-20 " src="images/saturn.png">
+            <h1 class="text-5xl font-extrabold font ml-6">W I T A R N . T H</h1>
+        </div>
+        <!-- main -->
+
+        <div class="ml-6 mr-6">
+            <h1 class="text-4xl font-mono font ml-6 mb-5">Highlight ประจำวัน</h1>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="text-center">1 / 3</div>
+                    <a href="#"><img class="object-cover h-96 w-full rounded-md " src="images/Blackhole.jpg"></a>
+                    <div class="text-center mt-10 text-4xl font-mono">ทฤษฎีความโน้มถ่วง กับปริศนาดาวเคราะห์มืด</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="text-center">2 / 3</div>
+                    <a href="#"><img class="object-cover h-96 w-full rounded-md" src="images/Lucas-Higgs.jpg"></a>
+                    <div class="text-center mt-10 text-4xl font-mono">การยิงอนุภาคของศูนย์วิจัย Cern เพื่อทดลองให้ newtron เจาะผ่านกำเเพง</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="text-center">3 / 3</div>
+                    <a href="#"><img class="object-cover h-96 w-full rounded-md" src="images/mutiverse.jpg"></a>
+                    <div class="text-center mt-10 text-4xl font-mono">Mutiverse หรือโลกคู่ขนานอาศัยอยู่ข้างๆเราเสมอ?</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+
+            <div class="mt-10" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+
+            <div class="mt-10 flex justify-between mb-12">
+                <a href="#">
+                    <h1
+                        class="text-4xl font-mono font ml-10 underline transition duration-300 hover:text-gray-500 transform hover:scale-110 motion-reduce:transform-none">
+                        Research(งานวิจัย)</h1>
+                </a>
+                <a href="#">
+                    <h1
+                        class="text-4xl font-mono font ml-6 mx-40 underline transition duration-300 hover:text-gray-500 transform hover:scale-110 motion-reduce:transform-none">
+                        Theory(ทฤษฎี)</h1>
+                </a>
+                <a href="#">
+                    <h1
+                        class="text-4xl font-mono font ml-6 mx-20 underline transition duration-300 hover:text-gray-500 transform hover:scale-110 motion-reduce:transform-none">
+                        Podcast</h1>
+                </a>
+            </div>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+            <!-- Research -->
+            <h1 class="text-4xl font-mono font ml-10 mb-10 mt-10">Research highlight</h1>
+
+            <div class="mt-10 flex justify-between mb-12">
+                <a href="#">
+                    <div>
+                        <img class="object-cover h-96 w-11/12 mb-10 rounded-md transition duration-300 ease-in-out transform hover:scale-105 motion-reduce:transform-none"
+                            src="images/mutiverse.jpg">
+                        <h1 class="text-2xl font-mono font ml-40 mx-20 transition duration-300 hover:text-gray-500">
+                            Mutiverse
+                            หรือโลกคู่ขนานอาศัยอยู่ข้างๆเราเสมอ?</h1>
+                    </div>
+                </a>
+                <a href="#">
+                    <div>
+                        <img class="object-cover h-96 w-11/12 ml-20 mr-40 mb-10 rounded-md transition duration-300 ease-in-out transform hover:scale-105 motion-reduce:transform-none"
+                            src="images/inflation.jpg">
+                        <h1 class="text-2xl font-mono font ml-96 mx-30 transition duration-300 hover:text-gray-500">
+                            Bigbang คือจุดเริ่มต้นของทุกสิ่ง</h1>
+                    </div>
+                </a>
+            </div>
+
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+            <!-- Theory -->
+            <h1 class="text-4xl font-mono font ml-10 mb-10 mt-10">Theory highlight</h1>
+
+            <div class="mt-10 flex justify-between mb-12">
+                <a href="#">
+                    <div>
+                        <img class="object-cover h-96 w-9/12 mb-10 rounded-md transition duration-300 ease-in-out transform hover:scale-105 motion-reduce:transform-none "
+                            src="images/Blackhole.jpg">
+                        <h1 class="text-2xl font-mono font ml-40 mx-20 transition duration-300 hover:text-gray-500">
+                            ทฤษฎีความโน้มถ่วง
+                            กับปริศนาดาวเคราะห์มืด
+                        </h1>
+                    </div>
+                </a>
+                <a href="#">
+                    <div>
+                        <img class="object-cover h-96 w-full mr-96 ml-auto mb-10 rounded-md transition duration-300 ease-in-out transform hover:scale-105 motion-reduce:transform-none"
+                            src="images/deja-vu-phenomenon.jpg">
+                        <h1 class="text-2xl font-mono font ml-28 mx-30 transition duration-300 hover:text-gray-500">Deja
+                            vu
+                            อาจเป็นเเค่ความผิดปกติของคลื่นสมองชั่วขณะ</h1>
+                    </div>
+                </a>
+            </div>
+
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+            <!-- podcast -->
+            <h1 class="text-4xl font-mono font ml-10 mb-10 mt-10">Podcast highlight</h1>
+
+            <div class="mt-10 flex justify-between mb-12">
+
+                <div class="h-48 content-center">
+                    <a href="https://www.youtube.com/watch?v=TTaPpfBeU28&t=31s">
+                        <img class="ml-40 mb-12 rounded-md transition duration-300 ease-in-out transform hover:scale-105 motion-reduce:transform-none"
+                            src="images/G (5).png">
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=TTaPpfBeU28&t=31s">
+                        <h1 class="text-2xl font-mono font mr-40 mx-20 transition duration-300 hover:text-gray-500">
+                            [วิทย์ถาร Podcast]#3
+                            วิธีการหาหลุดดำ/ใจกลางดาวเคราะห์มืด</h1>
+                    </a>
+                </div>
+
+                <a href="https://www.youtube.com/watch?v=GVblMjTFsoo&t=21s">
+                    <div>
+                        <img class="mr-40 mb-12 ml-60 rounded-md transition duration-300 ease-in-out transform hover:scale-105 motion-reduce:transform-none"
+                            src="images/G (6).png">
+
+                        <h1 class="text-2xl font-mono font ml-48 mx-30 transition duration-300 hover:text-gray-500">
+                            [วิทย์ถาร Podcast]#4
+                            ความขัดเเย้ง/ฟิสิกส์กับการข้ามเวลา</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="flex justify-center flex-wrap content-center">
+                <a href="#"><img class="object-contain h-48 w-full " src="images/Picture1.png"></a>
+                <a href="https://www.youtube.com/channel/UCcIqbexNyhaefdcW1GAyydw"><img class="object-contain h-40 w-40"
+                        src="images/yt.png"></a>
+            </div>
+            <h1 class="text-5xl font-mono font ml-6 text-center">sine 2020</h1>
+        </div>
+
+    </div>
+
+    <!-- my main.js -->
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+    <script src="./main.js"></script>
+
+</body>
+
+
+
+</html>
